@@ -87,8 +87,8 @@ def main():
           score2 = 0
           paddle1.rect.centery = h/2
           paddle2.rect.centery = h/2
-          ball.rect.x = w/2
-          ball.rect.y = h/2
+          ball.rect.centerx = w/2
+          ball.rect.centery = h/2
           ballx_velocity = 0
           bally_velocity = 0
           debug_message = "Game restarted"
@@ -126,8 +126,8 @@ def main():
           if score1 + score2 != 0:
             screen.blit(restart_text[0], restart_text[1])
 
-        ball.rect.y += bally_velocity
-        ball.rect.x += ballx_velocity
+        ball.rect.centery += bally_velocity
+        ball.rect.centerx += ballx_velocity
 
         # handle ball collision with paddle
         if pygame.sprite.collide_rect(ball, paddle1):
@@ -156,8 +156,8 @@ def main():
           current_round_start = False
           paddle1.rect.centery = h/2
           paddle2.rect.centery = h/2
-          ball.rect.x = w/2
-          ball.rect.y = h/2
+          ball.rect.centerx = w/2
+          ball.rect.centery = h/2
           ballx_velocity = 0
           bally_velocity = 0
           score2 += 1
@@ -168,8 +168,8 @@ def main():
           current_round_start = False
           paddle1.rect.centery = h/2
           paddle2.rect.centery = h/2
-          ball.rect.x = w/2
-          ball.rect.y = h/2
+          ball.rect.centerx = w/2
+          ball.rect.centery = h/2
           ballx_velocity = 0
           bally_velocity = 0
           score1 += 1
@@ -194,11 +194,11 @@ def main():
               bally_velocity = random.randint(-Y_CHANGE_BALL, Y_CHANGE_BALL)
           
           elif score1 < score2:
-            debug_message = "Player 1 score is lesser than player 2, choosing left"
+            debug_message = "Player 1 score is lesser than player 2, choosing right"
             ballx_velocity += BALL_VELOCITY_DEFAULT
             bally_velocity = random.randint(-Y_CHANGE_BALL, Y_CHANGE_BALL)
           else:
-            debug_message = "Player 2 score is lesser than player 1, choosing right"
+            debug_message = "Player 2 score is lesser than player 1, choosing left"
             ballx_velocity -= BALL_VELOCITY_DEFAULT
             bally_velocity = random.randint(-Y_CHANGE_BALL, Y_CHANGE_BALL)
 
