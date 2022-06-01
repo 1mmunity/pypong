@@ -2,8 +2,11 @@
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GRAY = (27, 27, 27)
-SCALE_FACTOR = 1 # scale factor for the game, this is used to scale the game to a smaller screen or bigger, and maintaining the same aspect ratio
+ORANGE = (255, 179, 0)
+YELLOW = (255, 213, 0)
 
+SCALE_FACTOR = 1 # scale factor for the game, this is used to scale the game to a smaller screen or bigger, and maintaining the same aspect ratio
+BALL_XVELOCITY_FASTER_OVER_TIME = (True, 1.03) # enable to make ball xvelocity faster every time it hits a paddle
 
 BALL_RADIUS = 5*SCALE_FACTOR
 Y_CHANGE_PADDLE = 8*SCALE_FACTOR
